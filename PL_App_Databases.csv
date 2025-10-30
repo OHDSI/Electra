@@ -1,0 +1,4 @@
+Name,db_code,rHealth_ServerName,Access,Folder,Scratch_Space_Name,Schema
+Complete_database_name1,short_name1,url_if_needed,Granted,short_name1,scratch.scratch_db/user,db_schema.cdm_schema
+Complete_database_name2,short_name2,url_if_needed,Granted,short_name2,scratch.scratch_db/user,db_schema.cdm_schema
+
