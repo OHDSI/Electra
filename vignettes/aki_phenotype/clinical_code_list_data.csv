@@ -1,0 +1,4 @@
+"","cohort_id","concept_id","concept_name","concept_code","domain_id","vocabulary_id"
+"1",11901,193782,"End-stage renal disease","46177005","Condition","SNOMED"
+"2",11901,4146536,"Renal dialysis","265764009","Procedure","SNOMED"
+"3",11901,197320,"Acute renal failure syndrome","14669001","Condition","SNOMED"

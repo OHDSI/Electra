@@ -1,0 +1,276 @@
+{
+  "cdmVersionRange": [">=5.0.0"],
+  "PrimaryCriteria": {
+    "CriteriaList": [
+      {
+        "ConditionOccurrence": {
+          "CodesetId": [5],
+          "OccurrenceStartDate": {
+            "Value": ["2012-01-01"],
+            "Op": ["gte"]
+          }
+        }
+      }
+    ],
+    "ObservationWindow": {
+      "PriorDays": [0],
+      "PostDays": [0]
+    },
+    "PrimaryCriteriaLimit": {
+      "Type": ["All"]
+    }
+  },
+  "ConceptSets": [
+    {
+      "id": [2],
+      "name": ["End-stage renal disease"],
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_ID": [193782],
+              "CONCEPT_NAME": ["End-stage renal disease"],
+              "STANDARD_CONCEPT": ["S"],
+              "STANDARD_CONCEPT_CAPTION": ["Standard"],
+              "INVALID_REASON": ["V"],
+              "INVALID_REASON_CAPTION": ["Valid"],
+              "CONCEPT_CODE": ["46177005"],
+              "DOMAIN_ID": ["Condition"],
+              "VOCABULARY_ID": ["SNOMED"],
+              "CONCEPT_CLASS_ID": ["Clinical Finding"]
+            },
+            "isExcluded": [false],
+            "includeDescendants": [true],
+            "includeMapped": [false]
+          }
+        ]
+      }
+    },
+    {
+      "id": [3],
+      "name": ["Dialysis"],
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_ID": [4146536],
+              "CONCEPT_NAME": ["Renal dialysis"],
+              "STANDARD_CONCEPT": ["S"],
+              "STANDARD_CONCEPT_CAPTION": ["Standard"],
+              "INVALID_REASON": ["V"],
+              "INVALID_REASON_CAPTION": ["Valid"],
+              "CONCEPT_CODE": ["265764009"],
+              "DOMAIN_ID": ["Procedure"],
+              "VOCABULARY_ID": ["SNOMED"],
+              "CONCEPT_CLASS_ID": ["Procedure"]
+            },
+            "isExcluded": [false],
+            "includeDescendants": [true],
+            "includeMapped": [false]
+          }
+        ]
+      }
+    },
+    {
+      "id": [5],
+      "name": ["Acute kidney injury (narrow definition) - Phenotype Phebruary"],
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_ID": [197320],
+              "CONCEPT_NAME": ["Acute renal failure syndrome"],
+              "STANDARD_CONCEPT": ["S"],
+              "STANDARD_CONCEPT_CAPTION": ["Standard"],
+              "INVALID_REASON": ["V"],
+              "INVALID_REASON_CAPTION": ["Valid"],
+              "CONCEPT_CODE": ["14669001"],
+              "DOMAIN_ID": ["Condition"],
+              "VOCABULARY_ID": ["SNOMED"],
+              "CONCEPT_CLASS_ID": ["Clinical Finding"]
+            },
+            "isExcluded": [false],
+            "includeDescendants": [true],
+            "includeMapped": [false]
+          }
+        ]
+      }
+    }
+  ],
+  "QualifiedLimit": {
+    "Type": ["All"]
+  },
+  "ExpressionLimit": {
+    "Type": ["All"]
+  },
+  "InclusionRules": [
+    {
+      "name": ["Minimum prior observation period of 365 days"],
+      "expression": {
+        "Type": ["ALL"],
+        "CriteriaList": [
+          {
+            "Criteria": {
+              "ObservationPeriod": {}
+            },
+            "StartWindow": {
+              "Start": {
+                "Coeff": [-1]
+              },
+              "End": {
+                "Days": [365],
+                "Coeff": [-1]
+              },
+              "UseIndexEnd": [false],
+              "UseEventEnd": [false]
+            },
+            "EndWindow": {
+              "Start": {
+                "Days": [0],
+                "Coeff": [1]
+              },
+              "End": {
+                "Coeff": [1]
+              },
+              "UseIndexEnd": [false],
+              "UseEventEnd": [true]
+            },
+            "RestrictVisit": [false],
+            "IgnoreObservationPeriod": [false],
+            "Occurrence": {
+              "Type": [2],
+              "Count": [1],
+              "IsDistinct": [false]
+            }
+          }
+        ],
+        "DemographicCriteriaList": [],
+        "Groups": []
+      }
+    },
+    {
+      "name": ["No ESKD at baseline"],
+      "description": ["To exclude cases with a diagnosis of End-Stage Kidney Disease in the 365 days before AKI occurrence. Period from -365 to -7 to account for ESKD due to the index episode of AKI"],
+      "expression": {
+        "Type": ["ALL"],
+        "CriteriaList": [
+          {
+            "Criteria": {
+              "ConditionOccurrence": {
+                "CodesetId": [2]
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": [365],
+                "Coeff": [-1]
+              },
+              "End": {
+                "Days": [7],
+                "Coeff": [-1]
+              },
+              "UseIndexEnd": [false],
+              "UseEventEnd": [false]
+            },
+            "RestrictVisit": [false],
+            "IgnoreObservationPeriod": [false],
+            "Occurrence": {
+              "Type": [0],
+              "Count": [0],
+              "IsDistinct": [false]
+            }
+          }
+        ],
+        "DemographicCriteriaList": [],
+        "Groups": []
+      }
+    },
+    {
+      "name": ["No chronic dialysis at baseline"],
+      "description": ["To exclude all patients receiving chronic dialysis defined as more than 3 recorded events of dialysis in the 1 year- 7 days before index date"],
+      "expression": {
+        "Type": ["ALL"],
+        "CriteriaList": [
+          {
+            "Criteria": {
+              "ProcedureOccurrence": {
+                "CodesetId": [3],
+                "ProcedureTypeExclude": [false]
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": [365],
+                "Coeff": [-1]
+              },
+              "End": {
+                "Days": [7],
+                "Coeff": [-1]
+              },
+              "UseIndexEnd": [false],
+              "UseEventEnd": [false]
+            },
+            "RestrictVisit": [false],
+            "IgnoreObservationPeriod": [false],
+            "Occurrence": {
+              "Type": [1],
+              "Count": [3],
+              "IsDistinct": [false]
+            }
+          }
+        ],
+        "DemographicCriteriaList": [],
+        "Groups": []
+      }
+    },
+    {
+      "name": ["Washout period with no AKI codes"],
+      "description": ["To rule out diagnosis codes that are follow ups (for example: check for status of recovery or progression, check sequelae, etc) from the actual event of AKI"],
+      "expression": {
+        "Type": ["ALL"],
+        "CriteriaList": [
+          {
+            "Criteria": {
+              "ConditionOccurrence": {
+                "CodesetId": [5]
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Days": [30],
+                "Coeff": [-1]
+              },
+              "End": {
+                "Days": [1],
+                "Coeff": [-1]
+              },
+              "UseIndexEnd": [false],
+              "UseEventEnd": [false]
+            },
+            "RestrictVisit": [false],
+            "IgnoreObservationPeriod": [false],
+            "Occurrence": {
+              "Type": [0],
+              "Count": [0],
+              "IsDistinct": [false]
+            }
+          }
+        ],
+        "DemographicCriteriaList": [],
+        "Groups": []
+      }
+    }
+  ],
+  "EndStrategy": {
+    "DateOffset": {
+      "DateField": ["StartDate"],
+      "Offset": [7]
+    }
+  },
+  "CensoringCriteria": [],
+  "CollapseSettings": {
+    "CollapseType": ["ERA"],
+    "EraPad": [0]
+  },
+  "CensorWindow": {}
+}

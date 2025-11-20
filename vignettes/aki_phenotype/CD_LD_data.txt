@@ -1,0 +1,22 @@
+Acute Kidney Injury (Specific) 
+
+ Clinical Description: 
+ Acute Kidney Injury (AKI) is a common, harmful and potentially treatable disease defined by an abrupt kidney function decrease. Attempts have been made over years to reach consensus on an AKI definition for use in RWD to allow more replicable and reproducible research, but results remain lacking. The etiology of AKI encompasses specific kidney diseases (acute interstitial nephritis, acute glomerular and vasculitic renal diseases); non-specific conditions (ischemia, toxic injury); and extrarenal conditions (prerenal azotemia, acute postrenal obstructive nephropathy). The clinical presentation of AKI is similar regardless of its etiology; thus, we focused on a broad phenotype to ascertain the full range of AKI subtypes. Differential diagnosis of AKI is shown in Table 1 (2,3).
+
+Acute Kidney Injury (Specific) 
+ Logic Description: 
+
+ Cohort Entry Event:
+ Condition occurrence of Acute Kidney injury 
+
+ Index Event:
+ Acute Kidney injury (acute renal failure syndrome) 
+
+ Inclusion/Exclusion Criteria:
+ ?1-year prior observation, 
+No end-stage kidney disease, in the year prior, 
+No chronic dialysis, 
+30 days pre-entry date no AKI washout period 
+
+ Cohort Exit:
+ Fixed duration relative to initial event of 7 days (from start date)
