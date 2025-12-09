@@ -1,0 +1,22 @@
+ Epilepsy without prior dementia 
+
+ Clinical Description: 
+ Epilepsy, also referred to as seizure disorder, is a complex neurological condition characterized by recurrent unprovoked seizures resulting from abnormal neuronal activity in the brain. This disorder encompasses a broad spectrum of neurobiological, cognitive, psychological, and social consequences that impact the lives of affected individuals. An epileptic seizure is defined as a sudden episode of disturbances in cognitive, motor, or sensory functions, driven by excessive or synchronous neuronal activity. It is important to distinguish between seizures and epilepsy, as a seizure represents a singular event while epilepsy denotes a chronic condition involving the recurrence of these unprovoked seizures. A diagnosis of epilepsy is generally established based on specific criteria: the occurrence of two unprovoked seizures separated by more than 24 hours, the occurrence of one unprovoked seizure with at least a 60% probability of experiencing additional seizures within the following decade, or the identification of an epilepsy syndrome. The incidence of epilepsy is reported to range from 30 to 50 cases per 100,000 individuals in high-income countries, with prevalence estimates between 4 to 10 cases per 1,000 individuals. In contrast, low and middle-income countries exhibit figures that are roughly double these rates. Multiple factors can contribute to the onset of epilepsy, including genetic predispositions, anatomical anomalies, febrile seizures, metabolic disorders, substance use or medication effects, traumatic brain injuries, infections, strokes, and neurodegenerative diseases.
+
+ Epilepsy without prior dementia 
+ Logic Description: 
+
+ Cohort Entry Event:
+ People with continuous observation of 365 days before event may enter the cohort when observing any of the following:
+1. Condition occurrences of Epilepsy.
+Limit cohort entry events to the earliest event per person. 
+
+ Index Event:
+ Condition occurrences of Epilepsy. 
+
+ Inclusion/Exclusion Criteria:
+ 1. Age: entry events with the following event criteria: who are >= 60 years old.
+2. No dementia prior to index: entry events having no condition occurrences of Dementia, starting anytime on or before cohort entry start date. 
+
+ Cohort Exit:
+ The person exits the cohort at the end of continuous observation.
