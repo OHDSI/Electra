@@ -1,0 +1,54 @@
+ NS_Dementia 
+
+ Clinical Description: 
+ Clinical Description: Dementia
+Overview:
+Dementia is a chronic and progressive neurodegenerative disorder characterized by a decline in cognitive function, affecting memory, thinking, orientation, comprehension, calculation, learning capacity, language, and judgment. It is not a single disease but rather a syndrome associated with various underlying diseases and brain injuries, the most common being Alzheimer’s disease, vascular dementia, Lewy body dementia, and frontotemporal dementia.
+In this phenotype, we aim to identify patients diagnosed with Dementia using diagnosis codes (ICD10, ICD10CM, ICD9CM) and read codes sourced from the HDR UK Phenotype Library and its corresponding standard codes.
+We provide potentially relevant treatments, procedures and symptoms associated with Dementia; However, this phenotype relies only on diagnosis codes and read codes.
+Presentation:
+Clinicians observe that individuals with dementia typically present with:
+•	Memory loss, particularly short-term memory
+•	Difficulty in performing familiar tasks
+•	Problems with language, such as finding the right words
+•	Disorientation to time and place
+•	Poor or decreased judgment
+•	Problems with abstract thinking
+•	Misplacing things in unusual places
+•	Changes in mood or behavior
+•	Changes in personality
+•	Loss of initiative
+Diagnostic Evaluation:
+The diagnostic workup for dementia involves:
+•	Comprehensive medical history and physical examination
+•	Cognitive and neuropsychological tests to assess cognitive decline
+•	Laboratory tests (e.g., blood tests) to rule out other causes of cognitive impairment
+•	Brain imaging (MRI or CT scans) to identify structural abnormalities, strokes, or tumors
+•	Electroencephalogram (EEG) in some cases to assess brain activity
+•	Biomarker tests (e.g., cerebrospinal fluid analysis for amyloid beta and tau proteins) in certain conditions like Alzheimer’s disease
+Treatment:
+There is no cure for dementia, but treatments focus on managing symptoms and slowing progression:
+•	Medications: Cholinesterase inhibitors (donepezil, rivastigmine, galantamine) and memantine for cognitive symptoms; antidepressants, anxiolytics, or antipsychotics for mood and behavioral symptoms
+•	Cognitive therapies: Cognitive stimulation therapy, reality orientation therapy, and reminiscence therapy
+•	Supportive care: Occupational therapy, speech therapy, and physical therapy to maintain functionality and quality of life
+•	Lifestyle modifications: Regular physical activity, healthy diet, mental and social engagement, and management of cardiovascular risk factors
+Prognosis:
+Dementia is a chronic and progressive condition. The progression varies depending on the type of dementia, but generally, it leads to increasing cognitive decline and functional impairment over several years. Life expectancy after diagnosis can range from a few years to over a decade, influenced by factors like age, overall health, and the specific type of dementia.
+Additional Relevant Information:
+Dementia encompasses a range of disorders with overlapping symptoms but distinct pathologies. It's important to differentiate between the types to tailor management strategies effectively. Conditions like mild cognitive impairment (MCI) can precede dementia and may progress to it over time. Understanding the specific features and progression of the underlying disease (e.g., Alzheimer's, vascular contributions, Lewy bodies) helps in accurate diagnosis and treatment planning.
+
+ NS_Dementia 
+ Logic Description: 
+
+ Cohort Entry Event:
+ People may enter the cohort upon observing condition occurrences of Dementia, with the initial events limited to all events per person. The cohort is not restricted for any specific duration of continuous enrollment. 
+
+ Index Event:
+ The index event occurs when a person is diagnosed with Dementia,  with the initial events limited to all events per person. 
+
+ Inclusion/Exclusion Criteria:
+ earliest diagnosis of minimum 2 diagnosis (at most one year appart) or 1 diagnosis and medication (at most one year appart) and limiting initial events to earliest events 
+
+ Cohort Exit:
+ The person exits the cohort at the end of continuous observation.
+
