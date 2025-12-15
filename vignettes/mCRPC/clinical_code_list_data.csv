@@ -1,0 +1,267 @@
+﻿cohort_id;concept_id;concept_name;concept_code;domain_id;vocabulary_id
+20470;1315942;docetaxel;72962;Drug;RxNorm
+20470;4163261;Malignant tumor of prostate;399068003;Condition;SNOMED
+20470;1551099;prednisone;8640;Drug;RxNorm
+20470;4286887;Radical orchiectomy;396692006;Procedure;SNOMED
+20470;4314682;Radical bilateral orchiectomy;87375004;Procedure;SNOMED
+20470;2004063;Unilateral orchiectomy;62.3;Procedure;ICD9Proc
+20470;4096783;Radical prostatectomy;26294005;Procedure;SNOMED
+20470;4235738;Prostatectomy;90470006;Procedure;SNOMED
+20470;1343039;triptorelin;38782;Drug;RxNorm
+20470;739471;relugolix;2472778;Drug;RxNorm
+20470;1351541;leuprolide;42375;Drug;RxNorm
+20470;1366310;goserelin;50610;Drug;RxNorm
+20470;19058410;degarelix;475230;Drug;RxNorm
+20470;19033280;buserelin;1825;Drug;RxNorm
+20470;1366773;histrelin;50975;Drug;RxNorm
+20470;19010868;abarelix;301739;Drug;RxNorm
+20470;1524822;Abiraterone and Apalutamide;8531;Regimen;HemOnc
+20470;35806835;ADT and Apalutamide;34148;Regimen;HemOnc
+20470;963987;apalutamide;1999574;Drug;RxNorm
+20470;40239056;abiraterone;1100072;Drug;RxNorm
+20470;1524822;Abiraterone and Apalutamide;8531;Regimen;HemOnc
+20470;911935;Abiraterone and Enzalutamide;2891;Regimen;HemOnc
+20470;746444;Akeega Oral Product;2645247;Drug;RxNorm
+20470;746445;Akeega Pill;2645248;Drug;RxNorm
+20470;746438;abiraterone / niraparib Oral Product;2645241;Drug;RxNorm
+20470;746440;abiraterone / niraparib Oral Tablet;2645243;Drug;RxNorm
+20470;746446;abiraterone / niraparib Oral Tablet [Akeega];2645249;Drug;RxNorm
+20470;746439;abiraterone / niraparib Pill;2645242;Drug;RxNorm
+20470;35806837;ADT and Abiraterone;34248;Regimen;HemOnc
+20470;746450;abiraterone acetate 500 MG / niraparib 100 MG Oral Tablet [Akeega];2645253;Drug;RxNorm
+20470;746449;abiraterone acetate 500 MG / niraparib 100 MG [Akeega];2645252;Drug;RxNorm
+20470;746441;abiraterone acetate 500 MG / niraparib 50 MG Oral Tablet;2645244;Drug;RxNorm
+20470;746447;abiraterone acetate 500 MG / niraparib 50 MG Oral Tablet [Akeega];2645250;Drug;RxNorm
+20470;746443;abiraterone acetate 500 MG / niraparib 50 MG [Akeega];2645246;Drug;RxNorm
+20470;35950928;BRCA1 (BRCA1 DNA repair associated) gene variant measurement;1100;Measurement;OMOP Genomic
+20470;35950178;BRCA2 (BRCA2 DNA repair associated) gene variant measurement;1101;Measurement;OMOP Genomic
+20470;35960995;BRIP1 (BRCA1 interacting protein C-terminal helicase 1) gene variant measurement;20473;Measurement;OMOP Genomic
+20470;35958219;CDK12 (cyclin dependent kinase 12) gene variant measurement;24224;Measurement;OMOP Genomic
+20470;35948105;CHEK2 (checkpoint kinase 2) gene variant measurement;16627;Measurement;OMOP Genomic
+20470;35956435;FANCA (FA complementation group A) gene variant measurement;3582;Measurement;OMOP Genomic
+20470;35949597;PALB2 (partner and localizer of BRCA2) gene variant measurement;26144;Measurement;OMOP Genomic
+20470;35952916;RAD51B (RAD51 paralog B) gene variant measurement;9822;Measurement;OMOP Genomic
+20470;35953642;RAD54L (RAD54 like) gene variant measurement;9826;Measurement;OMOP Genomic
+20470;2721199;Three-mutation BRCA1 or BRCA2 analysis for susceptibility to breast and ovarian cancer in ashkenazi individuals (Deprecated);S3823;Measurement;HCPCS
+20470;42742288;"BRCA1 (breast cancer 1) (eg, hereditary breast and ovarian cancer) gene analysis; full sequence analysis and common duplication/deletion variants (ie, exon 13 del 3.835kb, exon 13 dup 6kb, exon 14-20 del 26kb, exon 22 del 510bp, exon 8-9 del 7.1kb)";81214;Measurement;CPT4
+20470;35950178;BRCA2 (BRCA2 DNA repair associated) gene variant measurement;1101;Measurement;OMOP Genomic
+20470;42627945;"Hereditary breast cancer-related disorders (eg, hereditary breast cancer, hereditary ovarian cancer, hereditary endometrial cancer); genomic sequence analysis panel, must include sequencing of at least 10 genes, always including BRCA1, BRCA2, CDH1, MLH1, ";81432;Measurement;CPT4
+20470;42742291;"BRCA2 (BRCA2, DNA repair associated) (eg, hereditary breast and ovarian cancer) gene analysis; known familial variant";81217;Measurement;CPT4
+20470;4226283;BRCA2 mutation carrier detection test;405826006;Measurement;SNOMED
+20470;2721198;Single mutation analysis (in individual with a known BRCA1 or BRCA2 mutation in the family) for susceptibility to breast and ovarian cancer (Deprecated);S3822;Measurement;HCPCS
+20470;4226283;BRCA2 mutation carrier detection test;405826006;Measurement;SNOMED
+20470;42628603;"BRCA1 (BRCA1, DNA repair associated), BRCA2 (BRCA2, DNA repair associated) (eg, hereditary breast and ovarian cancer) gene analysis; full sequence analysis and full duplication/deletion analysis (ie, detection of large gene rearrangements)";81162;Measurement;CPT4
+20470;710003;"PALB2 (partner and localizer of BRCA2) (eg, breast and pancreatic cancer) gene analysis; known familial variant";81308;Measurement;CPT4
+20470;42742566;"BRCA1 (BRCA1, DNA repair associated), BRCA2 (BRCA2, DNA repair associated) (eg, hereditary breast and ovarian cancer) gene analysis; 185delAG, 5385insC, 6174delT variants";81212;Measurement;CPT4
+20470;3049254;BRCA2 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal;38531-0;Measurement;LOINC
+20470;927108;"BRCA1 (BRCA1, DNA repair associated), BRCA2 (BRCA2, DNA repair associated) (eg, hereditary breast and ovarian cancer) gene analysis; full duplication/deletion analysis (ie, detection of large gene rearrangements)";81164;Measurement;CPT4
+20470;42627946;"Hereditary breast cancer-related disorders (eg, hereditary breast cancer, hereditary ovarian cancer, hereditary endometrial cancer); duplication/deletion analysis panel, must include analyses for BRCA1, BRCA2, MLH1, MSH2, and STK11";81433;Measurement;CPT4
+20470;927107;"BRCA1 (BRCA1, DNA repair associated), BRCA2 (BRCA2, DNA repair associated) (eg, hereditary breast and ovarian cancer) gene analysis; full sequence analysis";81163;Measurement;CPT4
+20470;40762134;BRCA1+BRCA2 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal;59041-4;Measurement;LOINC
+20470;42742290;"BRCA2 (BRCA2, DNA repair associated) (eg, hereditary breast and ovarian cancer) gene analysis; full sequence analysis";81216;Measurement;CPT4
+20470;42742287;"BRCA1, BRCA2 (breast cancer 1 and 2) (eg, hereditary breast and ovarian cancer) gene analysis; uncommon duplication/deletion variants";81213;Measurement;CPT4
+20470;710002;"PALB2 (partner and localizer of BRCA2) (eg, breast and pancreatic cancer) gene analysis; full gene sequence";81307;Measurement;CPT4
+20470;927109;"BRCA1 (BRCA1, DNA repair associated) (eg, hereditary breast and ovarian cancer) gene analysis; full sequence analysis";81165;Measurement;CPT4
+20470;927111;"BRCA2 (BRCA2, DNA repair associated) (eg, hereditary breast and ovarian cancer) gene analysis; full duplication/deletion analysis (ie, detection of large gene rearrangements)";81167;Measurement;CPT4
+20470;3002832;BRCA1 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal;21639-0;Measurement;LOINC
+20470;42742565;"BRCA1, BRCA2 (breast cancer 1 and 2) (eg, hereditary breast and ovarian cancer) gene analysis; full sequence analysis and common duplication/deletion variants in BRCA1 (ie, exon 13 del 3.835kb, exon 13 dup 6kb, exon 14-20 del 26kb, exon 22 del 510bp, exon";81211;Measurement;CPT4
+20470;42742289;"BRCA1 (BRCA1, DNA repair associated) (eg, hereditary breast and ovarian cancer) gene analysis; known familial variant";81215;Measurement;CPT4
+20470;710003;"PALB2 (partner and localizer of BRCA2) (eg, breast and pancreatic cancer) gene analysis; known familial variant";81308;Measurement;CPT4
+20470;710002;"PALB2 (partner and localizer of BRCA2) (eg, breast and pancreatic cancer) gene analysis; full gene sequence";81307;Measurement;CPT4
+20470;1524822;Abiraterone and Apalutamide;8531;Regimen;HemOnc
+20470;35806835;ADT and Apalutamide;34148;Regimen;HemOnc
+20470;963987;apalutamide;1999574;Drug;RxNorm
+20470;1343039;triptorelin;38782;Drug;RxNorm
+20470;739471;relugolix;2472778;Drug;RxNorm
+20470;1351541;leuprolide;42375;Drug;RxNorm
+20470;1366773;histrelin;50975;Drug;RxNorm
+20470;1366310;goserelin;50610;Drug;RxNorm
+20470;19058410;degarelix;475230;Drug;RxNorm
+20470;19033280;buserelin;1825;Drug;RxNorm
+20470;19010868;abarelix;301739;Drug;RxNorm
+20470;1524822;Abiraterone and Apalutamide;8531;Regimen;HemOnc
+20470;35806835;ADT and Apalutamide;34148;Regimen;HemOnc
+20470;1524822;Abiraterone and Apalutamide;8531;Regimen;HemOnc
+20470;35806835;ADT and Apalutamide;34148;Regimen;HemOnc
+20470;2867878;Medical and Surgical @ Male Reproductive System @ Resection @ Testis, Left;0VTB;Procedure;ICD10PCS
+20470;2841757;Medical and Surgical @ Male Reproductive System @ Resection @ Testis, Right;0VT9;Procedure;ICD10PCS
+20470;45889224;Orchiectomy, radical, for tumor;1008565;Procedure;CPT4
+20470;4003224;Testis excision;120001005;Procedure;SNOMED
+20470;4170288;Male castration;275234001;Procedure;SNOMED
+20470;2813998;Medical and Surgical @ Male Reproductive System @ Resection @ Testes, Bilateral;0VTC;Procedure;ICD10PCS
+20470;4022105;Chemical male castration;225270001;Procedure;SNOMED
+20470;2109972;Excision of extraparenchymal lesion of testis;54512;Procedure;CPT4
+20470;2103796;"Incision and drainage, upper arm or elbow area; deep abscess or hematoma";23930;Procedure;CPT4
+20470;2109976;"Orchiectomy, radical, for tumor; with abdominal exploration";54535;Procedure;CPT4
+20470;2777944;Excision of Right Testis, Percutaneous Endoscopic Approach;0VB94ZZ;Procedure;ICD10PCS
+20470;35624542;Right total orchidectomy;767344008;Procedure;SNOMED
+20470;35624541;Left total orchidectomy;767343002;Procedure;SNOMED
+20470;4304921;Excision of bilateral testes;386634006;Procedure;SNOMED
+20470;42536287;Excision of right testis;735028003;Procedure;SNOMED
+20470;4341536;Total orchidectomy;236334001;Procedure;SNOMED
+20470;4073142;Total excision of bilateral testes;176416007;Procedure;SNOMED
+20470;4073143;Total transcrotal excision of bilateral testes;176418008;Procedure;SNOMED
+20470;4073141;Subcapsular excision of bilateral testes;176415006;Procedure;SNOMED
+20470;4012324;Excision of entire bilateral undescended testes;112910006;Procedure;SNOMED
+20470;4071936;Total inguinal excision of bilateral testes;176417003;Procedure;SNOMED
+20470;42539490;Excision of left testis;735027008;Procedure;SNOMED
+20470;4314682;Radical bilateral orchiectomy;87375004;Procedure;SNOMED
+20470;4071665;Open prostatectomy;176258007;Procedure;SNOMED
+20470;2805822;Medical and Surgical @ Male Reproductive System @ Excision @ Prostate @ Percutaneous @ No Device;0VB03Z;Procedure;ICD10PCS
+20470;4235738;Prostatectomy;90470006;Procedure;SNOMED
+20470;2841292;Medical and Surgical @ Male Reproductive System @ Destruction @ Prostate @ Open @ No Device;0V500Z;Procedure;ICD10PCS
+20470;4022105;Chemical male castration;225270001;Procedure;SNOMED
+20470;37202275;Hormone sensitive malignancy status;Z19.1;Observation;ICD10CM
+20470;37202276;Hormone resistant malignancy status;Z19.2;Observation;ICD10CM
+20470;40222431;cabazitaxel;996051;Drug;RxNorm
+20470;1309188;mitoxantrone;7005;Drug;RxNorm
+20470;1397599;cisplatin;2555;Drug;RxNorm
+20470;1344905;carboplatin;40048;Drug;RxNorm
+20470;1350504;etoposide;4179;Drug;RxNorm
+20470;45775965;pembrolizumab;1547545;Drug;RxNorm
+20470;45775578;radium;1546450;Drug;RxNorm
+20470;3042793;Prostate specific Ag.protein bound [Mass/volume] in Serum or Plasma;33667-7;Measurement;LOINC
+20470;3001784;Prostate Specific Ag Free/Prostate specific Ag.total in Serum or Plasma;12841-3;Measurement;LOINC
+20470;4272032;Prostate specific antigen measurement;63476009;Measurement;SNOMED
+20470;3013603;Prostate specific Ag [Mass/volume] in Serum or Plasma;2857-1;Measurement;LOINC
+20470;3005013;Prostate Specific Ag Free [Mass/volume] in Serum or Plasma;10886-0;Measurement;LOINC
+20470;3034548;Prostate specific Ag [Mass/volume] in Serum or Plasma by Detection limit <= 0.01 ng/mL;35741-8;Measurement;LOINC
+20470;37201123;Rising PSA following treatment for malignant neoplasm of prostate;R97.21;Measurement;ICD10CM
+20470;432851;Metastatic malignant neoplasm;128462008;Condition;SNOMED
+20470;36769180;Metastasis;OMOP4998856;Measurement;Cancer Modifier
+20470;1634499;Stage 4B;Stage-4B;Measurement;Cancer Modifier
+20470;1635142;AJCC/UICC M1 Category;AJCC/UICC-M1;Measurement;Cancer Modifier
+20470;3006575;Distant metastases.clinical [Class] Cancer;21907-1;Measurement;LOINC
+20470;1315942;docetaxel;72962;Drug;RxNorm
+20470;4163261;Malignant tumor of prostate;399068003;Condition;SNOMED
+20470;1551099;prednisone;8640;Drug;RxNorm
+20470;4286887;Radical orchiectomy;396692006;Procedure;SNOMED
+20470;4314682;Radical bilateral orchiectomy;87375004;Procedure;SNOMED
+20470;2004063;Unilateral orchiectomy;62.3;Procedure;ICD9Proc
+20470;4096783;Radical prostatectomy;26294005;Procedure;SNOMED
+20470;4235738;Prostatectomy;90470006;Procedure;SNOMED
+20470;1343039;triptorelin;38782;Drug;RxNorm
+20470;739471;relugolix;2472778;Drug;RxNorm
+20470;1351541;leuprolide;42375;Drug;RxNorm
+20470;1366310;goserelin;50610;Drug;RxNorm
+20470;19058410;degarelix;475230;Drug;RxNorm
+20470;19033280;buserelin;1825;Drug;RxNorm
+20470;1366773;histrelin;50975;Drug;RxNorm
+20470;19010868;abarelix;301739;Drug;RxNorm
+20470;1524822;Abiraterone and Apalutamide;8531;Regimen;HemOnc
+20470;35806835;ADT and Apalutamide;34148;Regimen;HemOnc
+20470;963987;apalutamide;1999574;Drug;RxNorm
+20470;40239056;abiraterone;1100072;Drug;RxNorm
+20470;1524822;Abiraterone and Apalutamide;8531;Regimen;HemOnc
+20470;911935;Abiraterone and Enzalutamide;2891;Regimen;HemOnc
+20470;746444;Akeega Oral Product;2645247;Drug;RxNorm
+20470;746445;Akeega Pill;2645248;Drug;RxNorm
+20470;746438;abiraterone / niraparib Oral Product;2645241;Drug;RxNorm
+20470;746440;abiraterone / niraparib Oral Tablet;2645243;Drug;RxNorm
+20470;746446;abiraterone / niraparib Oral Tablet [Akeega];2645249;Drug;RxNorm
+20470;746439;abiraterone / niraparib Pill;2645242;Drug;RxNorm
+20470;35806837;ADT and Abiraterone;34248;Regimen;HemOnc
+20470;746450;abiraterone acetate 500 MG / niraparib 100 MG Oral Tablet [Akeega];2645253;Drug;RxNorm
+20470;746449;abiraterone acetate 500 MG / niraparib 100 MG [Akeega];2645252;Drug;RxNorm
+20470;746441;abiraterone acetate 500 MG / niraparib 50 MG Oral Tablet;2645244;Drug;RxNorm
+20470;746447;abiraterone acetate 500 MG / niraparib 50 MG Oral Tablet [Akeega];2645250;Drug;RxNorm
+20470;746443;abiraterone acetate 500 MG / niraparib 50 MG [Akeega];2645246;Drug;RxNorm
+20470;35950928;BRCA1 (BRCA1 DNA repair associated) gene variant measurement;1100;Measurement;OMOP Genomic
+20470;35950178;BRCA2 (BRCA2 DNA repair associated) gene variant measurement;1101;Measurement;OMOP Genomic
+20470;35960995;BRIP1 (BRCA1 interacting protein C-terminal helicase 1) gene variant measurement;20473;Measurement;OMOP Genomic
+20470;35958219;CDK12 (cyclin dependent kinase 12) gene variant measurement;24224;Measurement;OMOP Genomic
+20470;35948105;CHEK2 (checkpoint kinase 2) gene variant measurement;16627;Measurement;OMOP Genomic
+20470;35956435;FANCA (FA complementation group A) gene variant measurement;3582;Measurement;OMOP Genomic
+20470;35949597;PALB2 (partner and localizer of BRCA2) gene variant measurement;26144;Measurement;OMOP Genomic
+20470;35952916;RAD51B (RAD51 paralog B) gene variant measurement;9822;Measurement;OMOP Genomic
+20470;35953642;RAD54L (RAD54 like) gene variant measurement;9826;Measurement;OMOP Genomic
+20470;2721199;Three-mutation BRCA1 or BRCA2 analysis for susceptibility to breast and ovarian cancer in ashkenazi individuals (Deprecated);S3823;Measurement;HCPCS
+20470;42742288;"BRCA1 (breast cancer 1) (eg, hereditary breast and ovarian cancer) gene analysis; full sequence analysis and common duplication/deletion variants (ie, exon 13 del 3.835kb, exon 13 dup 6kb, exon 14-20 del 26kb, exon 22 del 510bp, exon 8-9 del 7.1kb)";81214;Measurement;CPT4
+20470;35950178;BRCA2 (BRCA2 DNA repair associated) gene variant measurement;1101;Measurement;OMOP Genomic
+20470;42627945;"Hereditary breast cancer-related disorders (eg, hereditary breast cancer, hereditary ovarian cancer, hereditary endometrial cancer); genomic sequence analysis panel, must include sequencing of at least 10 genes, always including BRCA1, BRCA2, CDH1, MLH1, ";81432;Measurement;CPT4
+20470;42742291;"BRCA2 (BRCA2, DNA repair associated) (eg, hereditary breast and ovarian cancer) gene analysis; known familial variant";81217;Measurement;CPT4
+20470;4226283;BRCA2 mutation carrier detection test;405826006;Measurement;SNOMED
+20470;2721198;Single mutation analysis (in individual with a known BRCA1 or BRCA2 mutation in the family) for susceptibility to breast and ovarian cancer (Deprecated);S3822;Measurement;HCPCS
+20470;4226283;BRCA2 mutation carrier detection test;405826006;Measurement;SNOMED
+20470;42628603;"BRCA1 (BRCA1, DNA repair associated), BRCA2 (BRCA2, DNA repair associated) (eg, hereditary breast and ovarian cancer) gene analysis; full sequence analysis and full duplication/deletion analysis (ie, detection of large gene rearrangements)";81162;Measurement;CPT4
+20470;710003;"PALB2 (partner and localizer of BRCA2) (eg, breast and pancreatic cancer) gene analysis; known familial variant";81308;Measurement;CPT4
+20470;42742566;"BRCA1 (BRCA1, DNA repair associated), BRCA2 (BRCA2, DNA repair associated) (eg, hereditary breast and ovarian cancer) gene analysis; 185delAG, 5385insC, 6174delT variants";81212;Measurement;CPT4
+20470;3049254;BRCA2 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal;38531-0;Measurement;LOINC
+20470;927108;"BRCA1 (BRCA1, DNA repair associated), BRCA2 (BRCA2, DNA repair associated) (eg, hereditary breast and ovarian cancer) gene analysis; full duplication/deletion analysis (ie, detection of large gene rearrangements)";81164;Measurement;CPT4
+20470;42627946;"Hereditary breast cancer-related disorders (eg, hereditary breast cancer, hereditary ovarian cancer, hereditary endometrial cancer); duplication/deletion analysis panel, must include analyses for BRCA1, BRCA2, MLH1, MSH2, and STK11";81433;Measurement;CPT4
+20470;927107;"BRCA1 (BRCA1, DNA repair associated), BRCA2 (BRCA2, DNA repair associated) (eg, hereditary breast and ovarian cancer) gene analysis; full sequence analysis";81163;Measurement;CPT4
+20470;40762134;BRCA1+BRCA2 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal;59041-4;Measurement;LOINC
+20470;42742290;"BRCA2 (BRCA2, DNA repair associated) (eg, hereditary breast and ovarian cancer) gene analysis; full sequence analysis";81216;Measurement;CPT4
+20470;42742287;"BRCA1, BRCA2 (breast cancer 1 and 2) (eg, hereditary breast and ovarian cancer) gene analysis; uncommon duplication/deletion variants";81213;Measurement;CPT4
+20470;710002;"PALB2 (partner and localizer of BRCA2) (eg, breast and pancreatic cancer) gene analysis; full gene sequence";81307;Measurement;CPT4
+20470;927109;"BRCA1 (BRCA1, DNA repair associated) (eg, hereditary breast and ovarian cancer) gene analysis; full sequence analysis";81165;Measurement;CPT4
+20470;927111;"BRCA2 (BRCA2, DNA repair associated) (eg, hereditary breast and ovarian cancer) gene analysis; full duplication/deletion analysis (ie, detection of large gene rearrangements)";81167;Measurement;CPT4
+20470;3002832;BRCA1 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal;21639-0;Measurement;LOINC
+20470;42742565;"BRCA1, BRCA2 (breast cancer 1 and 2) (eg, hereditary breast and ovarian cancer) gene analysis; full sequence analysis and common duplication/deletion variants in BRCA1 (ie, exon 13 del 3.835kb, exon 13 dup 6kb, exon 14-20 del 26kb, exon 22 del 510bp, exon";81211;Measurement;CPT4
+20470;42742289;"BRCA1 (BRCA1, DNA repair associated) (eg, hereditary breast and ovarian cancer) gene analysis; known familial variant";81215;Measurement;CPT4
+20470;710003;"PALB2 (partner and localizer of BRCA2) (eg, breast and pancreatic cancer) gene analysis; known familial variant";81308;Measurement;CPT4
+20470;710002;"PALB2 (partner and localizer of BRCA2) (eg, breast and pancreatic cancer) gene analysis; full gene sequence";81307;Measurement;CPT4
+20470;1524822;Abiraterone and Apalutamide;8531;Regimen;HemOnc
+20470;35806835;ADT and Apalutamide;34148;Regimen;HemOnc
+20470;963987;apalutamide;1999574;Drug;RxNorm
+20470;1343039;triptorelin;38782;Drug;RxNorm
+20470;739471;relugolix;2472778;Drug;RxNorm
+20470;1351541;leuprolide;42375;Drug;RxNorm
+20470;1366773;histrelin;50975;Drug;RxNorm
+20470;1366310;goserelin;50610;Drug;RxNorm
+20470;19058410;degarelix;475230;Drug;RxNorm
+20470;19033280;buserelin;1825;Drug;RxNorm
+20470;19010868;abarelix;301739;Drug;RxNorm
+20470;1524822;Abiraterone and Apalutamide;8531;Regimen;HemOnc
+20470;35806835;ADT and Apalutamide;34148;Regimen;HemOnc
+20470;1524822;Abiraterone and Apalutamide;8531;Regimen;HemOnc
+20470;35806835;ADT and Apalutamide;34148;Regimen;HemOnc
+20470;2867878;Medical and Surgical @ Male Reproductive System @ Resection @ Testis, Left;0VTB;Procedure;ICD10PCS
+20470;2841757;Medical and Surgical @ Male Reproductive System @ Resection @ Testis, Right;0VT9;Procedure;ICD10PCS
+20470;45889224;Orchiectomy, radical, for tumor;1008565;Procedure;CPT4
+20470;4003224;Testis excision;120001005;Procedure;SNOMED
+20470;4170288;Male castration;275234001;Procedure;SNOMED
+20470;2813998;Medical and Surgical @ Male Reproductive System @ Resection @ Testes, Bilateral;0VTC;Procedure;ICD10PCS
+20470;4022105;Chemical male castration;225270001;Procedure;SNOMED
+20470;2109972;Excision of extraparenchymal lesion of testis;54512;Procedure;CPT4
+20470;2103796;"Incision and drainage, upper arm or elbow area; deep abscess or hematoma";23930;Procedure;CPT4
+20470;2109976;"Orchiectomy, radical, for tumor; with abdominal exploration";54535;Procedure;CPT4
+20470;2777944;Excision of Right Testis, Percutaneous Endoscopic Approach;0VB94ZZ;Procedure;ICD10PCS
+20470;35624542;Right total orchidectomy;767344008;Procedure;SNOMED
+20470;35624541;Left total orchidectomy;767343002;Procedure;SNOMED
+20470;4304921;Excision of bilateral testes;386634006;Procedure;SNOMED
+20470;42536287;Excision of right testis;735028003;Procedure;SNOMED
+20470;4341536;Total orchidectomy;236334001;Procedure;SNOMED
+20470;4073142;Total excision of bilateral testes;176416007;Procedure;SNOMED
+20470;4073143;Total transcrotal excision of bilateral testes;176418008;Procedure;SNOMED
+20470;4073141;Subcapsular excision of bilateral testes;176415006;Procedure;SNOMED
+20470;4012324;Excision of entire bilateral undescended testes;112910006;Procedure;SNOMED
+20470;4071936;Total inguinal excision of bilateral testes;176417003;Procedure;SNOMED
+20470;42539490;Excision of left testis;735027008;Procedure;SNOMED
+20470;4314682;Radical bilateral orchiectomy;87375004;Procedure;SNOMED
+20470;4071665;Open prostatectomy;176258007;Procedure;SNOMED
+20470;2805822;Medical and Surgical @ Male Reproductive System @ Excision @ Prostate @ Percutaneous @ No Device;0VB03Z;Procedure;ICD10PCS
+20470;4235738;Prostatectomy;90470006;Procedure;SNOMED
+20470;2841292;Medical and Surgical @ Male Reproductive System @ Destruction @ Prostate @ Open @ No Device;0V500Z;Procedure;ICD10PCS
+20470;4022105;Chemical male castration;225270001;Procedure;SNOMED
+20470;37202275;Hormone sensitive malignancy status;Z19.1;Observation;ICD10CM
+20470;37202276;Hormone resistant malignancy status;Z19.2;Observation;ICD10CM
+20470;40222431;cabazitaxel;996051;Drug;RxNorm
+20470;1309188;mitoxantrone;7005;Drug;RxNorm
+20470;1397599;cisplatin;2555;Drug;RxNorm
+20470;1344905;carboplatin;40048;Drug;RxNorm
+20470;1350504;etoposide;4179;Drug;RxNorm
+20470;45775965;pembrolizumab;1547545;Drug;RxNorm
+20470;45775578;radium;1546450;Drug;RxNorm
+20470;3042793;Prostate specific Ag.protein bound [Mass/volume] in Serum or Plasma;33667-7;Measurement;LOINC
+20470;3001784;Prostate Specific Ag Free/Prostate specific Ag.total in Serum or Plasma;12841-3;Measurement;LOINC
+20470;4272032;Prostate specific antigen measurement;63476009;Measurement;SNOMED
+20470;3013603;Prostate specific Ag [Mass/volume] in Serum or Plasma;2857-1;Measurement;LOINC
+20470;3005013;Prostate Specific Ag Free [Mass/volume] in Serum or Plasma;10886-0;Measurement;LOINC
+20470;3034548;Prostate specific Ag [Mass/volume] in Serum or Plasma by Detection limit <= 0.01 ng/mL;35741-8;Measurement;LOINC
+20470;37201123;Rising PSA following treatment for malignant neoplasm of prostate;R97.21;Measurement;ICD10CM
+20470;432851;Metastatic malignant neoplasm;128462008;Condition;SNOMED
+20470;36769180;Metastasis;OMOP4998856;Measurement;Cancer Modifier
+20470;1634499;Stage 4B;Stage-4B;Measurement;Cancer Modifier
+20470;1635142;AJCC/UICC M1 Category;AJCC/UICC-M1;Measurement;Cancer Modifier
+20470;3006575;Distant metastases.clinical [Class] Cancer;21907-1;Measurement;LOINC
