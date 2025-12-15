@@ -1,9 +1,14 @@
- NS_Dementia 
+Dementia (Specific) 
 
  Clinical Description: 
  Clinical Description: Dementia
 Overview:
-Dementia is a clinical syndrome characterized by a significant decline in cognitive function that interferes with independence in daily activities. It is caused by progressive brain diseases, most commonly Alzheimer’s disease, but also includes vascular dementia, Lewy body dementia, frontotemporal dementia, and other rarer forms. The clinical presentation typically involves memory loss, impaired reasoning, language difficulties, and behavioral changes. Diagnostic confirmation may involve cognitive testing (e.g., MMSE, MoCA), neuroimaging, and exclusion of reversible causes such as delirium, depression, or metabolic disorders. This phenotype includes individuals with a diagnosis of dementia, based on diagnostic codes. It excludes ambiguous or preliminary indicators and focuses on specificity to ensure high confidence in case identification. This phenotype is suitable for studies requiring a precise and specific case definition.
+Dementia is a clinical syndrome characterized by a significant decline in cognitive function that interferes with independence in daily activities. 
+It is caused by progressive brain diseases, most commonly Alzheimer’s disease, but also includes vascular dementia, Lewy body dementia, frontotemporal dementia, and other rarer forms. 
+The clinical presentation typically involves memory loss, impaired reasoning, language difficulties, and behavioral changes. Diagnostic confirmation may involve cognitive testing (e.g., MMSE, MoCA), neuroimaging, and exclusion of reversible causes such as delirium, depression, or metabolic disorders. 
+This phenotype includes individuals with a diagnosis of dementia, based on diagnostic codes. 
+It excludes ambiguous or preliminary indicators and focuses on specificity to ensure high confidence in case identification. 
+This phenotype is suitable for studies requiring a precise and specific case definition.
 
  Dementia(Specific)
  Logic Description: 
