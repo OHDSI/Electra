@@ -1,0 +1,125 @@
+﻿;cohort_id;concept_id;concept_name;concept_code;domain_id;vocabulary_id
+1;17553;45538101;Alzheimer disease;G30;Condition;ICD10
+2;17553;45509950;Alzheimer's disease;F110.00;Condition;Read
+3;17553;378419;Alzheimer's disease;26929004;Condition;SNOMED
+4;17553;1568293;Alzheimer's disease;G30;Condition;ICD10CM
+;17553;45513334;Alzheimer's disease with early onset;F110000;Condition;Read
+;17553;45496654;Alzheimer's disease with late onset;F110100;Condition;Read
+;17553;45429973;Arteriosclerotic dementia;E004.00;Condition;Read
+;17553;45466661;Arteriosclerotic dementia NOS;E004z00;Condition;Read
+;17553;376094;Arteriosclerotic dementia with delirium;191464005;Condition;SNOMED
+;17553;45456542;Arteriosclerotic dementia with delirium;E004100;Condition;Read
+;17553;45459880;Arteriosclerotic dementia with depression;E004300;Condition;Read
+;17553;374326;Arteriosclerotic dementia with depression;191466007;Condition;SNOMED
+;17553;4100252;Arteriosclerotic dementia with paranoia;191465006;Condition;SNOMED
+;17553;45490025;Arteriosclerotic dementia with paranoia;E004200;Condition;Read
+;17553;4092747;Cerebral degeneration presenting primarily with dementia;279982005;Condition;SNOMED
+;17553;37111242;Delirium co-occurrent with dementia;725898002;Condition;SNOMED
+;17553;45557150;Delirium superimposed on dementia;F05.1;Condition;ICD10
+;17553;4182210;Dementia;52448006;Condition;SNOMED
+;17553;44791022;Dementia annual review;2,49181E+14;Observation;SNOMED
+;17553;45488976;Dementia annual review;6AB..00;Observation;Read
+;17553;374888;Dementia associated with another disease;191519005;Condition;SNOMED
+;17553;45496109;Dementia care plan;8CMZ.00;Procedure;Read
+;17553;45533052;Dementia in Alzheimer disease;F00;Condition;ICD10
+;17553;45439888;Dementia in conditions EC;E041.00;Condition;Read
+;17553;4296253;Dementia management;386257007;Procedure;SNOMED
+;17553;45462173;Dementia monitoring;66h..00;Observation;Read
+;17553;44790944;Dementia monitoring;2,48711E+14;Observation;SNOMED
+;17553;45486416;Dementia monitoring administration;9Ou..00;Type Concept;Read
+;17553;44803643;Dementia monitoring first letter;7,15821E+14;Observation;SNOMED
+;17553;45476445;Dementia monitoring first letter;9Ou1.00;Observation;Read
+;17553;45426321;Dementia monitoring second letter;9Ou2.00;Observation;Read
+;17553;44803915;Dementia monitoring second letter;7,17471E+14;Observation;SNOMED
+;17553;44803843;Dementia monitoring telephone invitation;7,16991E+14;Observation;SNOMED
+;17553;45519593;Dementia monitoring telephone invite;9Ou5.00;Observation;Read
+;17553;45452875;Dementia monitoring third letter;9Ou3.00;Observation;Read
+;17553;44803781;Dementia monitoring third letter;7,16671E+14;Observation;SNOMED
+;17553;44803706;Dementia monitoring verbal invitation;7,16221E+14;Observation;SNOMED
+;17553;45502951;Dementia monitoring verbal invite;9Ou4.00;Observation;Read
+;17553;44803697;Excepted from dementia quality indicators - informed dissent;7,16131E+14;Observation;SNOMED
+;17553;45426348;Excepted from dementia quality indicators: Informed dissent;9hD1.00;Observation;Read
+;17553;44803717;Excepted from dementia quality indicators - patient unsuitable;7,16341E+14;Observation;SNOMED
+;17553;45519613;Excepted from dementia quality indicators: Patient unsuitable;9hD0.00;Observation;Read
+;17553;44803648;Exception reporting - dementia quality indicators;7,15881E+14;Observation;SNOMED
+;17553;45423111;Exception reporting: dementia quality indicators;9hD..00;Observation;Read
+;17553;45511593;H/O: dementia;1461.00;Observation;Read
+;17553;4044415;Language disorder of dementia;229672009;Condition;SNOMED
+;17553;4046090;Mixed cortical and subcortical vascular dementia;230287006;Condition;SNOMED
+;17553;4205407;Monitoring status;308537004;Observation;SNOMED
+;17553;45486739;Multi infarct dementia;E004.11;Condition;Read
+;17553;379778;Multi-infarct dementia;56267009;Condition;SNOMED
+;17553;45463318;Other senile and presenile organic psychoses;E00y.00;Condition;Read
+;17553;35610098;Predominantly cortical dementia;1,08952E+15;Condition;SNOMED
+;17553;4333667;Presbyophrenic psychosis;231438001;Condition;SNOMED
+;17553;45453170;Presbyophrenic psychosis;E00y.11;Condition;Read
+;17553;45493304;Presenile dementia;E001.00;Condition;Read
+;17553;378125;Presenile dementia;12348006;Condition;SNOMED
+;17553;45426621;Presenile dementia NOS;E001z00;Condition;Read
+;17553;45490023;Presenile dementia with delirium;E001100;Condition;Read
+;17553;381832;Presenile dementia with delirium;191452002;Condition;SNOMED
+;17553;45449842;Presenile dementia with depression;E001300;Condition;Read
+;17553;377527;Presenile dementia with depression;191455000;Condition;SNOMED
+;17553;45490024;Presenile dementia with paranoia;E001200;Condition;Read
+;17553;4098163;Presenile dementia with paranoia;191454001;Condition;SNOMED
+;17553;4218017;Primary degenerative dementia of the Alzheimer type, presenile onset;416780008;Condition;SNOMED
+;17553;4220313;Primary degenerative dementia of the Alzheimer type, senile onset;416975007;Condition;SNOMED
+;17553;4152048;Senile and presenile organic psychotic conditions;268612007;Condition;SNOMED
+;17553;45466660;Senile and presenile organic psychotic conditions;E00..00;Condition;Read
+;17553;4048875;Senile dementia;15662003;Condition;SNOMED
+;17553;45456541;Senile dementia;E00..11;Condition;Read
+;17553;45443161;Senile dementia with delirium;E003.00;Condition;Read
+;17553;376946;Senile dementia with delirium;191461002;Condition;SNOMED
+;17553;45426622;Senile dementia with depression;E002100;Condition;Read
+;17553;379784;Senile dementia with depression;191459006;Condition;SNOMED
+;17553;45439881;Senile dementia with depressive or paranoid features;E002.00;Condition;Read
+;17553;4101137;Senile dementia with depressive or paranoid features;191457008;Condition;SNOMED
+;17553;45439882;Senile dementia with depressive or paranoid features NOS;E002z00;Condition;Read
+;17553;4100250;Senile dementia with paranoia;191458003;Condition;SNOMED
+;17553;45436591;Senile dementia with paranoia;E002000;Condition;Read
+;17553;45456543;Senile or presenile psychoses NOS;E00z.00;Condition;Read
+;17553;45476784;Senile/presenile dementia;E00..12;Condition;Read
+;17553;4047747;Subcortical vascular dementia;230286002;Condition;SNOMED
+;17553;439276;Uncomplicated arteriosclerotic dementia;191463004;Condition;SNOMED
+;17553;45493305;Uncomplicated arteriosclerotic dementia;E004000;Condition;Read
+;17553;376085;Uncomplicated presenile dementia;191451009;Condition;SNOMED
+;17553;45436590;Uncomplicated presenile dementia;E001000;Condition;Read
+;17553;45523210;Uncomplicated senile dementia;E000.00;Condition;Read
+;17553;375791;Uncomplicated senile dementia;191449005;Condition;SNOMED
+;17553;45566772;Unspecified dementia;F03;Condition;ICD10
+;17553;35207114;Unspecified dementia;F03;Condition;ICD10CM
+;17553;45557147;Vascular dementia;F01;Condition;ICD10
+;17553;443605;Vascular dementia;429998004;Condition;SNOMED
+;17553;1568087;Vascular dementia;F01;Condition;ICD10CM
+;17553;4046089;Vascular dementia of acute onset;230285003;Condition;SNOMED
+;17553;45423394;[X]Alzheimer's dementia unspec;Eu00z11;Condition;Read
+;17553;45509906;[X]Alzheimer's disease type 1;Eu00111;Condition;Read
+;17553;45453196;[X]Alzheimer's disease type 2;Eu00013;Condition;Read
+;17553;45420209;[X]Arteriosclerotic dementia;Eu01.11;Condition;Read
+;17553;45516700;[X]Delirium superimposed on dementia;Eu04100;Condition;Read
+;17553;45490061;[X]Dementia in Alzheimer's dis, atypical or mixed type;Eu00200;Condition;Read
+;17553;45503272;[X]Dementia in Alzheimer's disease;Eu00.00;Condition;Read
+;17553;45456576;[X]Dementia in Alzheimer's disease, unspecified;Eu00z00;Condition;Read
+;17553;45470140;[X]Dementia in Alzheimer's disease with early onset;Eu00000;Condition;Read
+;17553;45490059;[X]Dementia in Alzheimer's disease with late onset;Eu00100;Condition;Read
+;17553;45503273;[X]Mixed cortical and subcortical vascular dementia;Eu01300;Condition;Read
+;17553;45420210;[X]Multi-infarct dementia;Eu01100;Condition;Read
+;17553;45456716;[X]Other Alzheimer's disease;Fyu3000;Condition;Read
+;17553;45426651;[X]Other vascular dementia;Eu01y00;Condition;Read
+;17553;45466697;[X]Predominantly cortical dementia;Eu01111;Condition;Read
+;17553;45516699;[X]Presenile dementia,Alzheimer's type;Eu00011;Condition;Read
+;17553;45459908;[X] Presenile dementia NOS;Eu02z11;Condition;Read
+;17553;45463345;[X] Presenile psychosis NOS;Eu02z12;Condition;Read
+;17553;45426652;[X] Primary degenerative dementia NOS;Eu02z13;Condition;Read
+;17553;45446548;[X] Primary degenerative dementia of Alzheimer's type, presenile onset;Eu00012;Condition;Read
+;17553;45483404;[X]Primary degenerative dementia of Alzheimer's type, senile onset;Eu00113;Condition;Read
+;17553;45490060;[X]Senile dementia,Alzheimer's type;Eu00112;Condition;Read
+;17553;45420212;[X] Senile dementia, depressed or paranoid type;Eu02z16;Condition;Read
+;17553;45459909;[X] Senile dementia NOS;Eu02z14;Condition;Read
+;17553;45519941;[X] Senile psychosis NOS;Eu02z15;Condition;Read
+;17553;45420211;[X]Subcortical vascular dementia;Eu01200;Condition;Read
+;17553;45433283;[X] Unspecified dementia;Eu02z00;Condition;Read
+;17553;45446549;[X]Vascular dementia;Eu01.00;Condition;Read
+;17553;45449868;[X]Vascular dementia of acute onset;Eu01000;Condition;Read
+;17553;45490062;[X]Vascular dementia, unspecified;Eu01z00;Condition;Read
+;17553;45421573;Language disorder of dementia;ZS7C500;Condition;Read
