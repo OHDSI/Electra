@@ -485,12 +485,6 @@ generate_sqlite_filepath <- function(scratch_space_name,
     prevalence_tables_paths <- character(0)
   }
 
-  # uploaded_s3_object <- upload_sqlite_to_s3(sqliteDbPath, s3_bucket_name = Sys.getenv("S3_bucket_server"), s3_key_prefix = "CD_SQLITE/OPTUM_EHR")
-
-  # if (send_notification_email) {
-   # send_mail_sqlite_to_s3(uploaded_s3_object =  uploaded_s3_object, CohortID = CohortID, databases = selectedDatabase, session_user = session_user)
-  # }
-
 # Guardar localmente
 logger::log_info(glue::glue("Saving SQLite file to {local_sqlite_path}"))
 # El archivo ya está en export_dir, solo copiarlo a la ubicación final
@@ -506,6 +500,15 @@ logger::log_success(glue::glue("SQLite file saved to: {final_sqlite_path}"))
 
 # Actualizar la ruta de retorno
 sqliteDbPath <- final_sqlite_path
+
+if (send_notification_email) {
+  send_mail_sqlite_local(
+    local_file_path = sqliteDbPath,
+    CohortID = CohortID,
+    databases = selectedDatabase,
+    session_user = session_user
+  )
+}
              
   # TODO: should include multiple tables per cohort
   return(list(
