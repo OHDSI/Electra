@@ -24,7 +24,6 @@ generate_sqlite_filepath <- function(scratch_space_name,
                                      multiple_databaseCodes,
                                      selectedDatabase,
                                      export_dir = file.path(getwd(), "export"),
-                                     local_sqlite_path = Sys.getenv("local_sqlite_path"),
                                      drop_cohort_stats_tables = FALSE,
                                      drivers_dir = paste(getwd(), "drivers", sep = "/"),
                                      send_notification_email = FALSE,
@@ -196,14 +195,17 @@ generate_sqlite_filepath <- function(scratch_space_name,
   on.exit(DBI::dbDisconnect(conn_sqlite), add = TRUE)
 
   m_correlation_analysis <- memoise::memoise(correlation_analysis,
+                                             cache = get_cache_obj(),
                                              omit_args = c("conn", "max_cores"))
 
   # Memoize time dependent analysis function
   m_time_dependent_analysis <- memoise::memoise(time_dependent_analysis,
+                                                cache = get_cache_obj(),
                                                 omit_args = c("conn", "postgres_conn"))
 
   # Memoize prevalence changes analysis function
   m_prevalence_changes_analysis <- memoise::memoise(prevalence_changes_analysis,
+                                                   cache = get_cache_obj(),
                                                    omit_args = c("conn", "postgres_conn"))
 
   # save.image("dev/pl-session.RData")
@@ -485,31 +487,12 @@ generate_sqlite_filepath <- function(scratch_space_name,
     prevalence_tables_paths <- character(0)
   }
 
-# Guardar localmente
-logger::log_info(glue::glue("Saving SQLite file to {local_sqlite_path}"))
-# El archivo ya está en export_dir, solo copiarlo a la ubicación final
-dest_path <- file.path(local_sqlite_path, selectedDatabase)
-if (!dir.exists(dest_path)) {
-  dir.create(dest_path, recursive = TRUE)
-}
+  uploaded_s3_object <- upload_sqlite_to_s3(sqliteDbPath, s3_bucket_name = Sys.getenv("S3_bucket_server"), s3_key_prefix = "CD_SQLITE/OPTUM_EHR")
 
-final_sqlite_path <- file.path(dest_path, basename(sqliteDbPath))
-file.copy(sqliteDbPath, final_sqlite_path, overwrite = TRUE)
+  if (send_notification_email) {
+    send_mail_sqlite_to_s3(uploaded_s3_object =  uploaded_s3_object, CohortID = CohortID, databases = selectedDatabase, session_user = session_user)
+  }
 
-logger::log_success(glue::glue("SQLite file saved to: {final_sqlite_path}"))
-
-# Actualizar la ruta de retorno
-sqliteDbPath <- final_sqlite_path
-
-if (send_notification_email) {
-  send_mail_sqlite_local(
-    local_file_path = sqliteDbPath,
-    CohortID = CohortID,
-    databases = selectedDatabase,
-    session_user = session_user
-  )
-}
-             
   # TODO: should include multiple tables per cohort
   return(list(
     list_tables = corr_tables,

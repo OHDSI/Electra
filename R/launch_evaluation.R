@@ -47,10 +47,9 @@ launch_cohort_evaluation <- function(
     home_page_df,
     phenotype_details,
     PL_app_dbs,
-    # S3_bucket_server,
-    # S3_bucket_cdsqlite_path,
-    # S3_bucket_region,
-    local_sqlite_path,
+    S3_bucket_server,
+    S3_bucket_cdsqlite_path,
+    S3_bucket_region,
     run_Environment,
     redshift_username,
     redshift_password,
@@ -131,17 +130,11 @@ launch_cohort_evaluation <- function(
 
   # check if SQLite File already exists. If not, start progress bar.
 
-  # bucket <- S3_bucket_server
-  # bucket_contents <- aws.s3::get_bucket_df(
-  #  bucket = S3_bucket_cdsqlite_path,
-  #  region = S3_bucket_region
-  #)
-
-    # Create local directory if it doesn't exist
-if (!dir.exists(local_sqlite_path)) {
-  dir.create(local_sqlite_path, recursive = TRUE)
-}
-    
+  bucket <- S3_bucket_server
+  bucket_contents <- aws.s3::get_bucket_df(
+    bucket = S3_bucket_cdsqlite_path,
+    region = S3_bucket_region
+  )
   # Preprocess cohort_id if multiple IDs were present sort and format
   logger::log_info("cohort_id: ", toString(cohort_id, Inf))
   # Check if Single Cohort entered
@@ -299,7 +292,6 @@ if (!dir.exists(local_sqlite_path)) {
               IsMultipleDB_Flag = IsMultipleDB,
               unlink_outputs = unlink_outputs,
               export_dir = export_dir,
-              local_sqlite_path = local_sqlite_path,
               drivers_dir = drivers_dir,
               force_evaluation = force_evaluation,
               schema_name = postgresql_schema_name
@@ -349,7 +341,6 @@ if (!dir.exists(local_sqlite_path)) {
               IsMultipleDB_Flag = IsMultipleDB,
               unlink_outputs = unlink_outputs,
               export_dir = export_dir,
-              local_sqlite_path = local_sqlite_path,
               drivers_dir = drivers_dir,
               force_evaluation = force_evaluation,
               schema_name = postgresql_schema_name,
