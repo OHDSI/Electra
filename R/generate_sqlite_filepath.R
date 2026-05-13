@@ -195,17 +195,14 @@ generate_sqlite_filepath <- function(scratch_space_name,
   on.exit(DBI::dbDisconnect(conn_sqlite), add = TRUE)
 
   m_correlation_analysis <- memoise::memoise(correlation_analysis,
-                                             cache = get_cache_obj(),
                                              omit_args = c("conn", "max_cores"))
 
   # Memoize time dependent analysis function
   m_time_dependent_analysis <- memoise::memoise(time_dependent_analysis,
-                                                cache = get_cache_obj(),
                                                 omit_args = c("conn", "postgres_conn"))
 
   # Memoize prevalence changes analysis function
   m_prevalence_changes_analysis <- memoise::memoise(prevalence_changes_analysis,
-                                                   cache = get_cache_obj(),
                                                    omit_args = c("conn", "postgres_conn"))
 
   # save.image("dev/pl-session.RData")
