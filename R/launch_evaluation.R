@@ -299,6 +299,7 @@ if (!dir.exists(local_sqlite_path)) {
               IsMultipleDB_Flag = IsMultipleDB,
               unlink_outputs = unlink_outputs,
               export_dir = export_dir,
+              local_sqlite_path = local_sqlite_path,
               drivers_dir = drivers_dir,
               force_evaluation = force_evaluation,
               schema_name = postgresql_schema_name
@@ -348,6 +349,7 @@ if (!dir.exists(local_sqlite_path)) {
               IsMultipleDB_Flag = IsMultipleDB,
               unlink_outputs = unlink_outputs,
               export_dir = export_dir,
+              local_sqlite_path = local_sqlite_path,
               drivers_dir = drivers_dir,
               force_evaluation = force_evaluation,
               schema_name = postgresql_schema_name,
