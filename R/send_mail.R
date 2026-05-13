@@ -80,3 +80,49 @@ ELECTRA App
 
   logger::log_success("(send_mail_zip_to_database) e-mail sent!")
   invisible(TRUE)}
+
+
+#' send_mail_sqlite_local
+#'
+#' @param local_file_path Path to the local SQLite file
+#' @param CohortID Cohort ID(s)
+#' @param databases Database name(s)
+#' @param session_user User email
+#'
+#' @return invisible(TRUE)
+#' @export
+#'
+send_mail_sqlite_local <- function(local_file_path, CohortID, databases, session_user) {
+  checkmate::assert_file_exists(local_file_path)
+  checkmate::assert_string(session_user, min.chars = 1)
+  stopifnot(
+    "databases argument is missing" = !missing(databases),
+    "session_user argument is missing" = !missing(session_user)
+  )
+
+  logger::log_info("(send_mail_sqlite_local) Sending Email...")
+
+  from <- sprintf(Sys.getenv("app_email"))
+  to <- sprintf(paste(session_user, Sys.getenv("company_common_email"), sep = ""))
+  subject <- paste(
+    "SQLite from Cohort Evaluation is ready for Cohort(s) ",
+    paste0(CohortID, collapse = ", "),
+    " and database ",
+    paste0(databases, collapse = ", "),
+    sep = ""
+  )
+  body <- glue::glue("Hello,
+    Great News! Your Cohort Evaluation output - SQLite file - is ready locally.
+    
+    File location: {local_file_path}
+    
+    You can now access the app and visualize your results.
+    
+    Thank you,
+    ELECTRA App
+  ")
+
+  sendmailR::sendmail(from, to, subject, body, control = list(smtpServer = Sys.getenv("servidor_SMTP")))
+  logger::log_success("(send_mail_sqlite_local) e-mail sent!")
+  invisible(TRUE)
+}

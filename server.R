@@ -493,9 +493,7 @@ Thank you,
       atlas_user_name <- input$atlas_user_name # Original: input$atlas_user_name
       atlas_password <- input$atlas_password # Original: input$atlas_password
       PL_app_dbs # Original: PL_app_dbs (likely an object or parameter already in the environment)
-      S3_bucket_server <- Sys.getenv("S3_bucket_server") # Original: input$S3_bucket_server
-      S3_bucket_cdsqlite_path <- Sys.getenv("S3_bucket_cdsqlite_path") # Original: input$S3_bucket_cdsqlite_path
-      S3_bucket_region <- Sys.getenv("S3_bucket_region") # Original: input$S3_bucket_region
+      local_sqlite_path <- Sys.getenv("local_sqlite_path")
       run_Environment <- Sys.getenv("run_Environment") # Original: input$run_Environment
       redshift_username <- Sys.getenv("redshift_username") # Original: input$redshift_username
       redshift_password <- Sys.getenv("redshift_password") # Original: input$redshift_password
@@ -510,9 +508,7 @@ Thank you,
         home_page_df = home_page_df(),
         phenotype_details = phenotype_details,
         PL_app_dbs = PL_app_dbs,
-        S3_bucket_server = S3_bucket_server,
-        S3_bucket_cdsqlite_path = S3_bucket_cdsqlite_path,
-        S3_bucket_region = S3_bucket_region,
+        local_sqlite_path = local_sqlite_path,
         run_Environment = run_Environment,
         redshift_username = redshift_username,
         redshift_password = redshift_password,
@@ -618,25 +614,20 @@ Thank you,
       sep = ""
     )
 
-    json_exists <- aws.s3::object_exists(json_key, Sys.getenv("S3_bucket_server"))
-    if (!json_exists) {
-      showModal(modalDialog(
-        title = "Object Not Found",
-        shiny::HTML(glue::glue("Cannot download because object <strong>{json_key}</strong> does not exist in AWS S3 <strong>{Sys.getenv(\"S3_bucket_server\")}</strong>."))
-      ))
-      req(json_exists)
-    }
+local_json_path <- Sys.getenv("local_json_path")
+json_file_path <- file.path(local_json_path, paste0(selected_row()$jnj_cohort_definition_id, ".json"))
+json_exists <- file.exists(json_file_path)
 
-    CD_JSON <-
-      save_object(
-        json_key,
-        file = paste(
-          getwd(),
-          paste(selected_row()$jnj_cohort_definition_id, ".json", sep = ""),
-          sep = "/"
-        ),
-        bucket = Sys.getenv("S3_bucket_server")
-      )
+if (!json_exists) {
+  showModal(modalDialog(
+    title = "Object Not Found",
+    shiny::HTML(glue::glue("Cannot download because JSON file for cohort <strong>{selected_row()$jnj_cohort_definition_id}</strong> does not exist locally at <strong>{local_json_path}</strong>."))
+  ))
+  req(json_exists)
+}
+
+   CD_JSON <- json_file_path 
+    
     to_download <-
       reactiveValues(
         clinical_code_list = codeListData(),
