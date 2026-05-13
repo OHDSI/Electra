@@ -493,9 +493,7 @@ Thank you,
       atlas_user_name <- input$atlas_user_name # Original: input$atlas_user_name
       atlas_password <- input$atlas_password # Original: input$atlas_password
       PL_app_dbs # Original: PL_app_dbs (likely an object or parameter already in the environment)
-      S3_bucket_server <- Sys.getenv("S3_bucket_server") # Original: input$S3_bucket_server
-      S3_bucket_cdsqlite_path <- Sys.getenv("S3_bucket_cdsqlite_path") # Original: input$S3_bucket_cdsqlite_path
-      S3_bucket_region <- Sys.getenv("S3_bucket_region") # Original: input$S3_bucket_region
+      local_sqlite_path <- Sys.getenv("local_sqlite_path")
       run_Environment <- Sys.getenv("run_Environment") # Original: input$run_Environment
       redshift_username <- Sys.getenv("redshift_username") # Original: input$redshift_username
       redshift_password <- Sys.getenv("redshift_password") # Original: input$redshift_password
