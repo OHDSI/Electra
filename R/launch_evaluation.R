@@ -47,9 +47,10 @@ launch_cohort_evaluation <- function(
     home_page_df,
     phenotype_details,
     PL_app_dbs,
-    S3_bucket_server,
-    S3_bucket_cdsqlite_path,
-    S3_bucket_region,
+    # S3_bucket_server,
+    # S3_bucket_cdsqlite_path,
+    # S3_bucket_region,
+    local_sqlite_path,
     run_Environment,
     redshift_username,
     redshift_password,
@@ -130,11 +131,17 @@ launch_cohort_evaluation <- function(
 
   # check if SQLite File already exists. If not, start progress bar.
 
-  bucket <- S3_bucket_server
-  bucket_contents <- aws.s3::get_bucket_df(
-    bucket = S3_bucket_cdsqlite_path,
-    region = S3_bucket_region
-  )
+  # bucket <- S3_bucket_server
+  # bucket_contents <- aws.s3::get_bucket_df(
+  #  bucket = S3_bucket_cdsqlite_path,
+  #  region = S3_bucket_region
+  #)
+
+    # Create local directory if it doesn't exist
+if (!dir.exists(local_sqlite_path)) {
+  dir.create(local_sqlite_path, recursive = TRUE)
+}
+    
   # Preprocess cohort_id if multiple IDs were present sort and format
   logger::log_info("cohort_id: ", toString(cohort_id, Inf))
   # Check if Single Cohort entered
