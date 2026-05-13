@@ -366,266 +366,146 @@ generate_sqlite_filepath_from_database <- function(scratch_space_name,
 } # End of generate_sqlite_filepath_from_database function
 
 
-
 #' sqlite_path_multiple
 #'
-#' Function to generate sqlite path for selected multiple databases retrieving from postfresql database
+#' Function to generate sqlite path for selected multiple databases
 #'
-#' @param scratch_space_name
-#' @param username
-#' @param password
-#' @param atlas_user_name
-#' @param atlas_password
 #' @param CohortID
-#' @param server
 #' @param selectedDatabase
 #' @param multiple_databaseCodes
-#' @param total_db_count
-#' @param db_count
-#' @param ExistingCohortBit
-#' @param IsMultipleDB_Flag
+#' @param export_dir
+#' @param local_sqlite_path
+#' @param force_evaluation
+#' @param send_notification_email
+#' @param session_user
+#' @param schema_name
 #'
 #' @return
 #' @export
 #'
-sqlite_path_multiple <- function(scratch_space_name = NULL,
-                                 username = NULL,
-                                 password = NULL,
-                                 atlas_user_name = NULL,
-                                 atlas_password = NULL,
-                                 CohortID = NULL,
-                                 server = NULL,
+sqlite_path_multiple <- function(CohortID = NULL,
                                  selectedDatabase = NULL,
                                  multiple_databaseCodes = NULL,
-                                 total_db_count = 0,
-                                 db_count = 0,
-                                 ExistingCohortBit = NULL,
-                                 IsMultipleDB_Flag = NULL,
-                                 unlink_outputs = TRUE,
                                  export_dir = file.path(getwd(), "export"),
-                                 drivers_dir = paste(getwd(), "drivers", sep = "/"),
+                                 local_sqlite_path = Sys.getenv("local_sqlite_path"),
+                                 ExistingCohortBit = FALSE,
                                  force_evaluation = FALSE,
-                                 schema_name = "phenotype_library",
                                  send_notification_email = FALSE,
-                                 session_user = NULL) { # Start of sqlite_path_multiple function
-
-  checkmate::assert_directory_exists(drivers_dir)
-  checkmate::assert_logical(force_evaluation)
-
+                                 session_user = NULL,
+                                 schema_name = "phenotype_library") {
+  
+  checkmate::assert_string(local_sqlite_path, min.chars = 1)
+  
   if (send_notification_email && !shiny::isTruthy(session_user)) {
     stop("send_notification_email is set to TRUE, so valid session_user must be provided.")
   }
-
+  
   FUN_OUTPUTS <- list()
-
-  if (as.character.default(Sys.getenv("run_Environment") == "development")) {
-    loggit("INFO", paste0("CohortID: ", as.character.default(CohortID)), app = "PhenoType Interface Functions")
-    loggit("INFO", paste0("CohortID[1]: ", CohortID[1]), app = " PhenoType Interface Functions")
-    loggit("INFO", paste0("CohortID[2]: ", CohortID[2]), app = " PhenoType Interface Functions")
+  
+  # Crear directorio de almacenamiento si no existe
+  if (!dir.exists(local_sqlite_path)) {
+    dir.create(local_sqlite_path, recursive = TRUE)
   }
-
-  # sort the Cohorts when multiple to avoid creating mutiple files for the same cohorts regardless of the order inputed
+  
+  # Formatear Cohort IDs
   CohortID <- sort.default(CohortID)
   logger::log_info(paste("Sorted Cohort Ids :", CohortID))
-
-
-  #--------------------------------------ADD CODE HERE ------------------------------------------#
-
-  # Add code to pull data for selected DB and Cohorts from App database and into CSV files
-  # Zip up the csv files for this DB and do same for other selected DBs
-  # Get the location of all ZIP files and set it as the Export Folder
-
-  # Set Export Folder after determining which DBs and cohorts we are generating the file for
-  # Check if Cohort Ids already exist then retrieve data from database
-  if (ExistingCohortBit == TRUE && force_evaluation == FALSE) {
-    logger::log_info("Pulling from database Cohort IDs previously processed")
-    # schema_name <- "phenotype_library"
-
-    results <- generate_sqlite_filepath_from_database(
-      scratch_space_name = scratch_space_name,
-      username = username,
-      password = password,
-      atlas_user_name = atlas_user_name,
-      atlas_password = atlas_password,
-      CohortID = CohortID,
-      server = server,
-      schema_name = schema_name,
-      multiple_databaseCodes = multiple_databaseCodes,
-      export_dir = export_dir
-    )
-
-    sqliteDbPath <- results$sqliteDbPath
-    logger::log_success("sqliteDbPath: Retrieved from Database")
-    .GlobalEnv$sqliteDbPath <- sqliteDbPath
+  
+  # Ruta local del archivo SQLite
+  db_folder <- file.path(local_sqlite_path, selectedDatabase)
+  if (!dir.exists(db_folder)) {
+    dir.create(db_folder, recursive = TRUE)
+  }
+  
+  local_sqlite_file <- file.path(db_folder, paste0(CohortID, ".sqlite"))
+  
+  # Verificar si el archivo ya existe localmente
+  if (file.exists(local_sqlite_file) && !force_evaluation && ExistingCohortBit) {
+    logger::log_info("(sqlite_path_multiple) Pulling from local storage - cohort previously processed")
+    
+    sqliteDbPath <- local_sqlite_file
     FUN_OUTPUTS$pulled_from_database <- TRUE
     FUN_OUTPUTS$sqliteDbPath <- sqliteDbPath
-    # folder_path = paste0(getwd(),"/export/merged/", multiple_databaseCodes,"/")
-    # sqliteDbPath = paste(folder_path,"/", CohortID, ".sqlite", sep = "")
-  } else { # Start of Processing New Cohorts Loop
-    # Else process new Cohort Ids
-    logger::log_info("Processing new cohort(s)")
-    # if(grepl('_', CohortID)){
-    # Cohort_ID = strsplit(as.character(CohortID), '_')[[1]]
-    # }
-
+    
+  } else {
+    # Procesar nuevos cohorts
+    logger::log_info("(sqlite_path_multiple) Processing new cohort(s)")
+    
     results <- generate_sqlite_filepath(
-      scratch_space_name = scratch_space_name,
-      username = username,
-      password = password,
-      atlas_user_name = atlas_user_name,
-      atlas_password = atlas_password,
       CohortID = CohortID,
-      server = server,
-      multiple_databaseCodes = multiple_databaseCodes,
       selectedDatabase = selectedDatabase,
+      multiple_databaseCodes = multiple_databaseCodes,
       export_dir = export_dir,
-      drivers_dir = drivers_dir,
-      send_notification_email = send_notification_email,
-      session_user = session_user
+      local_sqlite_path = local_sqlite_path
     )
-
-    checkmate::assert_names(names(results), must.include = c("sqliteDbPath", "exportFolder"))
+    
     sqliteDbPath <- results$sqliteDbPath
-    .GlobalEnv$sqliteDbPath <- sqliteDbPath
-    exportFolder <- results$exportFolder
-
     FUN_OUTPUTS$sqliteDbPath <- sqliteDbPath
-    FUN_OUTPUTS$exportFolder <- exportFolder
-
-    # Save csv to database server
-    zip_file_path <- paste0(exportFolder, "/", "Results_", selectedDatabase, ".zip")
-    logger::log_info(glue::glue("Compressing CSV files from {exportFolder} to {zip_file_path}"))
-    local({
-      wd <- getwd()
-      on.exit(setwd(wd))
-      setwd(exportFolder)
-      logger::log_info("zip_file_path:", zip_file_path)
-      zip(basename(zip_file_path), files = list.files(pattern = "*.csv"))
-    })
-
-    FUN_OUTPUTS$zip_file_path <- zip_file_path
-    logger::log_success("Zip is ready: ", zip_file_path)
-    logger::log_info("exportFolder: ", exportFolder)
-
-    # Call function
-    logger::log_info(glue::glue("Uploading CSVs from '{zip_file_path}' to PostgreSQL..."))
-    upload_csvs_from_zip_to_db(
-      zip_file_path = zip_file_path,
-      CohortID = CohortID,
-      selectedDatabase =  selectedDatabase,
-      overwrite = FALSE,
-      append = TRUE,
-      tablePrefix = schema_name
-    )
-
-    logger::log_success("Upload PostgreSQL is done")
-
-    if (send_notification_email) {
-      send_mail_zip_to_database(CohortID = CohortID, databases = selectedDatabase, session_user = session_user)
-    }
-
-  } # End of Processing New Cohorts Loop
-
-
-  # print(paste("total_db_count = db_count :", total_db_count, db_count))
-
-  # Arguments to create shinysettings,connectionhandlers,datasource
-  # sqliteDbPath <- sqliteDbPath
-  # print("sqliteDbPath: Saving to Database")
-  # print(sqliteDbPath)
-  vocabularyDatabaseSchemas <- "main"
-  resultsDatabaseSchema <- "main"
-  aboutText <- NULL
-  tablePrefix <- ""
-  cohortTableName <- "cohort"
-  databaseTableName <- "database"
-  enableAnnotation <- TRUE
-  enableAuthorization <- FALSE
-
-  if (as.character.default(Sys.getenv("run_Environment") == "development")) {
-    loggit("INFO", "Value of tablePrefix: ", app = "PhenoType Interface Functions")
-    loggit("INFO", paste(tablePrefix), app = "PhenoType Interface Functions")
+    FUN_OUTPUTS$exportFolder <- results$exportFolder
   }
-
-  # tryCatch({
-  # sqliteDbPath <- normalizePath(sqliteDbPath)
-  # print(paste("Start normalized SqliteDbPath ", sqliteDbPath))
-  # sqliteDbPath = normalizePath(sqliteDbPath)
-  # print(paste("End normalized SqliteDbPath ", sqliteDbPath))
-  # }, error = function(e)
-  # {
-  # message("an error occurred in normalizePath: ", e$message)
-  # }
-  # )
-  # )
-
+  
+  # Establecer conexión con SQLite
   tryCatch(
     {
-      # Establishing connection with the sqlite file
-      connectionDetails <-
-        DatabaseConnector::createConnectionDetails(dbms = "sqlite", server = sqliteDbPath)
-      print(connectionDetails)
-      # }
-      # Shiny settings
-      .GlobalEnv$shinySettings <- list(
-        # if(total_db_count == db_count | ExistingCohortBit == TRUE){
+      connectionDetails <- DatabaseConnector::createConnectionDetails(
+        dbms = "sqlite", 
+        server = sqliteDbPath
+      )
+      
+      shinySettings <- list(
         connectionDetails = connectionDetails,
-        # },
-        resultsDatabaseSchema = resultsDatabaseSchema,
-        vocabularyDatabaseSchemas = vocabularyDatabaseSchemas,
-        aboutText = aboutText,
-        tablePrefix = tablePrefix,
-        cohortTableName = cohortTableName,
-        databaseTableName = databaseTableName,
-        enableAnnotation = enableAnnotation,
+        resultsDatabaseSchema = "main",
+        vocabularyDatabaseSchemas = "main",
+        aboutText = NULL,
+        tablePrefix = "",
+        cohortTableName = "cohort",
+        databaseTableName = "database",
+        enableAnnotation = TRUE,
         enableAuthorization = FALSE
       )
-      print(paste("shiny :----", .GlobalEnv$shinySettings))
-      print(shinySettings$connectionDetails)
-      # Connectionhandler
-      # if(total_db_count == db_count | ExistingCohortBit == TRUE){
-      connectionHandler <-
-        ResultModelManager::PooledConnectionHandler$new(shinySettings$connectionDetails)
-      .GlobalEnv$connectionHandler <- connectionHandler
-      # }
-      print(.GlobalEnv$connectionHandler)
-      # dataSource
-      .GlobalEnv$resultDatabaseSettings <- list(
-        schema = as.character(shinySettings$resultsDatabaseSchema),
-        vocabularyDatabaseSchema = shinySettings$vocabularyDatabaseSchema,
-        cdTablePrefix = shinySettings$tablePrefix,
-        cgTable = shinySettings$cohortTableName,
-        databaseTable = shinySettings$databaseTableName
+      
+      .GlobalEnv$shinySettings <- shinySettings
+      
+      connectionHandler <- ResultModelManager::PooledConnectionHandler$new(
+        shinySettings$connectionDetails
       )
-      .GlobalEnv$dataSource <-
-        OhdsiShinyModules::createCdDatabaseDataSource(
-          connectionHandler = connectionHandler,
-          resultDatabaseSettings = resultDatabaseSettings
-        )
+      .GlobalEnv$connectionHandler <- connectionHandler
+      
+      resultDatabaseSettings <- list(
+        schema = "main",
+        vocabularyDatabaseSchema = "main",
+        cdTablePrefix = "",
+        cgTable = "cohort",
+        databaseTable = "database"
+      )
+      .GlobalEnv$resultDatabaseSettings <- resultDatabaseSettings
+      
+      dataSource <- OhdsiShinyModules::createCdDatabaseDataSource(
+        connectionHandler = connectionHandler,
+        resultDatabaseSettings = resultDatabaseSettings
+      )
+      .GlobalEnv$dataSource <- dataSource
+      
+      FUN_OUTPUTS$connectionHandler <- connectionHandler
+      FUN_OUTPUTS$resultDatabaseSettings <- resultDatabaseSettings
+      FUN_OUTPUTS$shinySettings <- shinySettings
+      FUN_OUTPUTS$dataSource <- dataSource
+      
     },
     error = function(e) {
-      message("an error occurred connection details: ", e$message)
+      logger::log_error("Error establishing connection: ", e$message)
     }
   )
-
-  # Removes the sqlite file that got downloaded, during the generation process, to free-up the memory space
-  if (unlink_outputs) {
-    # unlink(sqliteDbPath, force = TRUE)
-    unlink(paste0(CohortID, ".sqlite"), force = TRUE)
-    unlink(export_dir, force = TRUE)
-    unlink(paste(export_dir, selectedDatabase, sep = "/"), force = TRUE)
+  
+  # Enviar notificación por email si es requerido
+  if (send_notification_email && file.exists(sqliteDbPath)) {
+    send_mail_sqlite_local(
+      local_file_path = sqliteDbPath,
+      CohortID = CohortID,
+      databases = selectedDatabase,
+      session_user = session_user
+    )
   }
-
-  # Removes the sqlite file that got downloaded for multiple databases
-  #  unlink(paste(getwd(), "export","merged", multiple_databaseCodes, sep = "/"), force = TRUE)
-
-  # Returns the arguments required to run the server portion of Cohort Diagnostics App
-  logger::log_info("list:---")
-
-  FUN_OUTPUTS$connectionHandler <- connectionHandler
-  FUN_OUTPUTS$resultDatabaseSettings <- resultDatabaseSettings
-  FUN_OUTPUTS$shinySettings <- shinySettings
-  FUN_OUTPUTS$dataSource <- dataSource
-
+  
   return(FUN_OUTPUTS)
-} # End of sqlite_path_multiple function
+}
