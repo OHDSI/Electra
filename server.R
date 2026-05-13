@@ -614,25 +614,20 @@ Thank you,
       sep = ""
     )
 
-    json_exists <- aws.s3::object_exists(json_key, Sys.getenv("S3_bucket_server"))
-    if (!json_exists) {
-      showModal(modalDialog(
-        title = "Object Not Found",
-        shiny::HTML(glue::glue("Cannot download because object <strong>{json_key}</strong> does not exist in AWS S3 <strong>{Sys.getenv(\"S3_bucket_server\")}</strong>."))
-      ))
-      req(json_exists)
-    }
+local_json_path <- Sys.getenv("local_json_path")
+json_file_path <- file.path(local_json_path, paste0(selected_row()$jnj_cohort_definition_id, ".json"))
+json_exists <- file.exists(json_file_path)
 
-    CD_JSON <-
-      save_object(
-        json_key,
-        file = paste(
-          getwd(),
-          paste(selected_row()$jnj_cohort_definition_id, ".json", sep = ""),
-          sep = "/"
-        ),
-        bucket = Sys.getenv("S3_bucket_server")
-      )
+if (!json_exists) {
+  showModal(modalDialog(
+    title = "Object Not Found",
+    shiny::HTML(glue::glue("Cannot download because JSON file for cohort <strong>{selected_row()$jnj_cohort_definition_id}</strong> does not exist locally at <strong>{local_json_path}</strong>."))
+  ))
+  req(json_exists)
+}
+
+   CD_JSON <- json_file_path 
+    
     to_download <-
       reactiveValues(
         clinical_code_list = codeListData(),
